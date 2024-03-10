@@ -32,6 +32,7 @@ public class Vetor {
         Produto[] temporario = new Produto[tamanho - 1];
 
         for (int i = 0; i < vetor.length - 1; i++) {
+            // Posições a partir do elemento removido recebem o elemento da frente, de forma que o vetor fique com um registro a menos
             if (i >= posicao) {
                 temporario[i] = getVetor()[i + 1];
             } else {
@@ -47,7 +48,7 @@ public class Vetor {
     }
 
     public String listar() {
-        if (getVetor()[0] == null) {
+        if (getVetor().length == 0) {
             return "\nNão há produtos cadastrados.\n";
         }
         
@@ -81,7 +82,7 @@ public class Vetor {
         if (contemTermo) {
             return retorno;
         } else {
-            return retorno + "Desculpe, não há produtos com o termo pesquisado.";
+            return retorno + "Desculpe, não há produtos com o termo pesquisado.\n";
         }
     }
 }

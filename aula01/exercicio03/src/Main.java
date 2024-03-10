@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
-public class Exercicio03 {
+public class Main {
     public static void main(String[] args) {
-        new Exercicio03();
+        new Main();
     }
 
-    public Exercicio03() {
+    public Main() {
         Scanner teclado = new Scanner(System.in);
 
         // Criação de um vetor dinâmico, inicializado com tamanho 0, do tipo Produto
@@ -116,19 +116,18 @@ public class Exercicio03 {
             // Se o novo nome já pertencer ao vetor e não for o elemento alterado, este é solicitado novamente
             while (produtos.getByName(nome) != -1) {
                 if (indiceAlterado == produtos.getByName(nome)) {
-                    System.out.print("Deseja manter o mesmo nome? ");
+                    System.out.print("Deseja manter o mesmo nome? "); // Em caso de alterações apenas no valor
                     String resposta = teclado.next();
 
                     if (resposta.trim().equalsIgnoreCase("Sim")) {
                         break;
                     }
                 } else {
-                    System.out.print("Desculpe, produto de nome " + nome + " já cadastrado.");
+                    System.out.print("Desculpe, produto de nome " + nome + " já cadastrado.\n");
                 }
                 System.out.print("\nNovo nome: ");
                 nome = teclado.next();
             }
-
             System.out.print("Novo valor (R$): ");
             double valor = validarValor(teclado);
 
