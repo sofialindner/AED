@@ -33,3 +33,7 @@ De forma semelhante aos arrays, listas são **coleções ordenadas** de objetos 
 ### Fila
 
 A estrutura de dados fila ou *queue* segue o princípio **FIFO (First In First Out)**, ou seja, o primeiro a entrar é o primeiro a sair, de modo que a ordem de remoção dos elementos segue a ordem de inserção. Dispõe de métodos para adicionar, remover e exibir o primeiro da fila. Exemplo: fila de impressão de documentos.
+
+## Pilha
+
+A pilHa ou *stack* é uma estrutura de dados que segue o princípio contrário ao de filas, ou seja, o último a entrar, será o primeiro a sair **(LIFO)**, uma vez que está no topo da pilha. Assim como a fila, apresenta métodos de adição, remoção e exibição do último da pilha. Exemplo: função desfazer de editores de texto; função voltar dos navegadores.
