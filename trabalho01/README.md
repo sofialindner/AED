@@ -12,4 +12,4 @@ Por fim, optei por uma lista que implementasse a **Fila (Queue)**, uma vez que:
 
 - Por se tratar de uma Fila, cujo propósito é especialmente voltado à ordem de registro, a visualização da próxima tarefa a ser realizada é facilitada pelo método peek(), de modo que não se faz necessário varrer a fila;
 
-- Por mais interessante que pareça a proposta do LinkedList de implementar, além das operações com os primeiros, também as operações com os últimos registrados, não é uma demanda contemplada pelo problema e, se considerada sua limitação com relação à memória e eficiência na alteração dos elementos, é possível concluir que a Fila ainda seja a opção mais adequada.
+- Por mais interessante que pareça a proposta do LinkedList de implementar, além das operações com os primeiros, também as operações com os últimos registrados, não é uma demanda contemplada pelo problema e, se considerada sua limitação com relação à memória e eficiência na inserção/remoção dos elementos, é possível concluir que a Fila ainda seja a opção mais adequada.
