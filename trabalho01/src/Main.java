@@ -18,8 +18,8 @@ public class Main {
             System.out.println("Escolha uma opção: ");
             System.out.println("(1) - Adicionar tarefa");
             System.out.println("(2) - Concluir tarefa");
-            System.out.println("(3) - Exibir próxima tarefa");
-            System.out.println("(4) - Exibir tarefas");
+            System.out.println("(3) - Visualizar próxima tarefa");
+            System.out.println("(4) - Visualizar tarefas");
             System.out.println("(5) - Finalizar");
             opcao = teclado.nextInt();
 
@@ -43,10 +43,12 @@ public class Main {
                     break;
             }
         }
+        teclado.close();
     }
 
+    // Método de cadastro de uma nova tarefa (única), com sua respectiva descrição e importância
     private String adicionar(Scanner teclado) {
-        System.out.println("Descrição: ");
+        System.out.print("Descrição: ");
         String descricao = teclado.next();
 
         if (tarefaCadastrada(descricao)) 
@@ -58,23 +60,25 @@ public class Main {
         while (!importancia.trim().equals("!") &&
              !importancia.trim().equals("!!") &&
              !importancia.trim().equals("!!!")) {
-            System.out.println("Informe uma importância válida.");
-            System.out.println("Importância:\n(!) - Baixa\n(!!) - Média\n(!!!) - Alta");
+            System.out.println("Informe uma importância válida.\nImportância:\n(!) - Baixa\n(!!) - Média\n(!!!) - Alta");
             importancia = teclado.next();
         }
         tarefas.add(new Tarefa(descricao, importancia));
         return "Tarefa adicionada com sucesso!\n";
     }
 
+    // Método de conclusão de uma tarefa (registro mais antigo)
     private void concluir() {
         tarefas.remove();
         System.out.println("Tarefa concluída!\n");
     }
 
+    // Método de exibição da próxima tarefa (registro mais antigo)
     private String exibirProxima() {
-        return "Próxima tarefa:\n" + tarefas.peek().toString();
+        return "\nPRÓXIMA TAREFA:\n" + tarefas.peek().toString() + "\n";
     }
 
+    // Método de listagem de todas as tarefas
     private String exibirTarefas() {
         String listaTarefas = "";
         for (Tarefa t : tarefas) {
@@ -86,6 +90,7 @@ public class Main {
         return "TO-DO LIST\n" + listaTarefas;
     }
 
+    // Método de verificação de existência de uma tarefa na lista
     private boolean tarefaCadastrada(String novaTarefa) {
         for (Tarefa t : tarefas) {
             if (t.getDescricao().trim().equalsIgnoreCase(novaTarefa)) {
